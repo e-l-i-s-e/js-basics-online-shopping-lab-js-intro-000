@@ -14,7 +14,6 @@ function addToCart(item) {
   let itemConstructor = {itemName: item, itemPrice: price};
   console.log(itemConstructor)
   cart.push(itemConstructor);
-  keys.push(item);
   return `${item} has been added to your cart.`
 }
 
