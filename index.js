@@ -41,16 +41,23 @@ return `In your cart, you have ${singleItem1.itemName} at $${singleItem1.itemPri
 
 function total() {
   var totalPrice = 0;
-  var individualItem = {};
-  for(var i = 0; i < keys.length; i++){
-    individualItem = cart[i];
-    totalPrice = totalPrice + individualItem[keys[i]];
-  } return totalPrice;
-
+var individualItem = {};
+for(var i = 0; i < keys.length; i++){
+  individualItem = cart[i];
+  totalPrice = totalPrice + individualItem.itemPrice;
+ } return totalPrice;
 }
 
 function removeFromCart(item) {
-  // write your code here
+ var soloItem = {};
+ for(var i = 0; i < cart.length; i++){
+  soloItem = cart[i];
+  console.log(soloItem)
+  if(soloItem.itemName === item){
+     cart.splice(i, 1);
+     return cart;
+   }
+ } return "That item is not in your cart."
 }
 
 function placeOrder(cardNumber) {
