@@ -22,7 +22,7 @@ function viewCart() {
   return "Your shopping cart is empty."
 } else if(cart.length === 1) {
 var singleItem = cart[0];
-return `In your cart, you have ${singleItem.itemName} at $${singleItem.itemPrice}`
+return `In your cart, you have ${singleItem.itemName} at $${singleItem.itemPrice}.`
 } else if (cart.length === 2){
 var singleItem1 = cart[0];
 var singleItem2 = cart[1];
@@ -30,7 +30,7 @@ return `In your cart, you have ${singleItem1.itemName} at $${singleItem1.itemPri
 } else {
   var itemObj = {};
   var itemObjLast = cart[cart.length-1];
-  var sentence = "In your cart, you have ";
+  var sentence = "In your cart, you have";
   for (var i = 0; i < cart.length-1; i++){
     itemObj = cart[i];
     sentence = `${sentence} ${itemObj.itemName} at $${itemObj.itemPrice},`
