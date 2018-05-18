@@ -22,20 +22,20 @@ function viewCart() {
   if(cart.length === 0){
   return "Your shopping cart is empty."
 } else if(cart.length === 1) {
-  var singleItem = cart[0];
-  return `In your cart, you have ${keys[0]} at ${singleItem[keys[0]]}`
+var singleItem = cart[0];
+return `In your cart, you have ${singleItem.itemName} at $${singleItem.itemPrice}`
 } else if (cart.length === 2){
-  var singleItem1 = cart[0];
-  var singleItem2 = cart[1];
-  return `In your cart, you have ${keys[0]} at $${singleItem1[keys[0]]}, and ${keys[1]} at $${singleItem2[keys[1]]}.`;
-  } else {
-    var itemObj = {};
-    var itemObjLast = cart[cart.length-1];
-    var sentence = "In your cart, you have ";
-    for (var i = 0; i < keys.length-1; i++){
-      itemObj = cart[i];
-      sentence = `${sentence} ${keys[i]} at $${itemObj[keys[i]]},`
-    } return `${sentence} and ${keys[keys.length-1]} at $${itemObjLast[keys[keys.length-1]]}.`
+var singleItem1 = cart[0];
+var singleItem2 = cart[1];
+return `In your cart, you have ${singleItem1.itemName} at $${singleItem1.itemPrice}, and ${singleItem2.itemName} at $${singleItem2.itemPrice}.`;
+} else {
+  var itemObj = {};
+  var itemObjLast = cart[cart.length-1];
+  var sentence = "In your cart, you have ";
+  for (var i = 0; i < keys.length-1; i++){
+    itemObj = cart[i];
+    sentence = `${sentence} ${itemObj.itemName} at $${itemObj.itemPrice},`
+  } return `${sentence} and ${itemObjLast.itemName} at $${itemObjLast.itemPrice}.`
  }
 }
 
