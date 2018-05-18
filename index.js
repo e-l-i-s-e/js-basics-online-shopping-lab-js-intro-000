@@ -42,7 +42,7 @@ return `In your cart, you have ${singleItem1.itemName} at $${singleItem1.itemPri
 function total() {
   var totalPrice = 0;
 var individualItem = {};
-for(var i = 0; i < keys.length; i++){
+for(var i = 0; i < cart.length; i++){
   individualItem = cart[i];
   totalPrice = totalPrice + individualItem.itemPrice;
  } return totalPrice;
