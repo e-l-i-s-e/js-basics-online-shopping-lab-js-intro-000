@@ -31,7 +31,7 @@ return `In your cart, you have ${singleItem1.itemName} at $${singleItem1.itemPri
   var itemObj = {};
   var itemObjLast = cart[cart.length-1];
   var sentence = "In your cart, you have ";
-  for (var i = 0; i < keys.length-1; i++){
+  for (var i = 0; i < cart.length-1; i++){
     itemObj = cart[i];
     sentence = `${sentence} ${itemObj.itemName} at $${itemObj.itemPrice},`
   } return `${sentence} and ${itemObjLast.itemName} at $${itemObjLast.itemPrice}.`
